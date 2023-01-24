@@ -5,3 +5,4 @@ openai==0.26.1
 selenium==4.7.2
 termcolor==2.2.0
 tqdm==4.64.1
+webdriver-manager==3.8.5

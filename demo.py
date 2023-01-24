@@ -13,6 +13,8 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import logging
 from IPython import embed
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 logger = logging.getLogger(__name__)
 
 
@@ -24,7 +26,7 @@ class actGPTEnv:
             if headless:
                 chrome_options.add_argument("--headless")
             self.driver = webdriver.Chrome(
-                executable_path, options=chrome_options)
+                service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
         else:
             self.driver = driver
 
